@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-App mit Streamlit – Dein Mini-Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #0e4b6e;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0;
+            box-shadow: 0 4px 20px rgba(14, 75, 110, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: #0e4b6e;
+            color: white;
+            border-radius: 0;
+            margin: -2rem -2rem 3rem -2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: none;
+        }
+
+        .subtitle {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: #0e4b6e;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #b5c206;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #2a6d7d;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #0e4b6e;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        p {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #d9e072, #f5a997);
+            padding: 1.5rem;
+            border-radius: 0;
+            margin: 1.5rem 0;
+            border-left: 4px solid #b5c206;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #6e929f;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Noto Sans', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            color: #2a6d7d;
+        }
+
+        .step-box {
+            background: #f8f9ff;
+            border: 2px solid #0e4b6e;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #0e4b6e;
+            margin-bottom: 0.8rem;
+        }
+
+        .example-box {
+            background: #fff3cd;
+            border: 1px solid #c7d415;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border: 1px solid #ef7e6d;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #e03e3f;
+        }
+
+        .success {
+            background: #d4edda;
+            border: 1px solid #b5c206;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #b5c206;
+        }
+
+        .tip-box {
+            background: #e8f4f8;
+            border: 1px solid #25b8cd;
+            border-radius: 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #25b8cd;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0e4b6e;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .header {
+                margin: -1rem -1rem 2rem -1rem;
+            }
+
+        }
+
+        a {
+            color: #25b8cd;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Noto Sans', monospace;
+            color: #2a6d7d;
+        }
+
+        .intro-section {
+            background: #e8f4f8;
+            border-left: 4px solid #25b8cd;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #b5c206, #25b8cd);
+            margin: 2rem 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>KI-App mit Streamlit – Dein Mini-Workshop</h1>
+            <div class="subtitle">Entwickle deine eigene KI-Anwendung Schritt für Schritt</div>
+        </div>
+
+        <div class="highlight">
+            <p>In diesem Mini-Workshop baust du Schritt für Schritt deine eigene kleine KI-Anwendung mit Streamlit. <strong>Du entscheidest selbst, was die KI für dich tun soll!</strong> Gehe die Aufgaben der Reihe nach durch und probiere alles direkt im Code aus.</p>
+            <p><strong>Hilfe benötigt?</strong> Du kannst dir unsere Beispiel-App ansehen und dort oben links auch eine KI Fragen stellen (kopiere gerne auch Code in den Chat!): <a href="https://kifestival.streamlit.app/" target="_blank">https://kifestival.streamlit.app/</a></p>
+        </div>
+
+        <h3>Einführung: Variablen in Python</h3>
+        
+        <div class="intro-section">
+            <p>Variablen sind wie kleine Boxen, in denen du Informationen speichern kannst. Du gibst ihnen einen Namen und kannst ihnen Werte zuweisen, zum Beispiel Zahlen oder Texte. Variablen helfen dir dabei, Daten im Programm zu merken und später wiederzuverwenden. <strong>Ohne Variablen könntest du keine Benutzereingaben speichern oder Berechnungen durchführen!</strong></p>
+        </div>
+
+        <h4>Beispiel:</h4>
+        <div class="code-block">name = "Anna"
+punkte = 5</div>
+
+        <hr class="divider">
+
+        <h2>Aufgabe 1: Überlege dir eine KI-Anwendung</h2>
+        
+        <div class="step-box">
+            <div class="step-title">Überlege dir, welche Aufgabe die KI für dich erledigen soll.</div>
+            
+            <p><strong>Beispiele:</strong></p>
+            <ul>
+                <li>Lass dir Schulthemen erklären</li>
+                <li>Texte übersetzen</li>
+                <li>Aus Stichpunkten einen Text machen</li>
+                <li>Gedichte oder Geschichten schreiben</li>
+                <li>Mathe-Aufgaben erklären</li>
+            </ul>
+            
+            <p>Du kannst dir auch eine ganz eigene Anwendung ausdenken!</p>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Aufgabe 2: Passe den Titel deiner App an</h2>
+        
+        <div class="step-box">
+            <div class="step-title">Passe den Titel der App so an, dass er zu deiner Anwendung passt.</div>
+            
+            <p>Suche im Code die Zeile mit <code>st.title("Formulierungsmaschine")</code>.</p>
+            
+            <p>Ändere den Text in den Titel, der zu deiner Idee passt, zum Beispiel:</p>
+            
+            <div class="code-block">st.title("Dein eigener Vokabeltrainer")</div>
+        </div>
+
+        <div class="tip-box">
+            <p><strong>Hinweis:</strong> Der Titel erscheint oben in deiner Web-App.</p>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Aufgabe 3: Erkläre der KI ihre Aufgabe</h2>
+        
+        <div class="step-box">
+            <div class="step-title">Im sogenannten <code>system_prompt</code> kannst du der KI genau erklären, was sie für dich tun soll.</div>
+            
+            <p>Suche im Code die Zeile mit <code>system_prompt = ...</code>.</p>
+            
+            <p>Beschreibe, wie die KI antworten soll:</p>
+            <ul>
+                <li>Einfach verständlich</li>
+                <li>Für Grundschüler geeignet</li>
+                <li>Als Liste oder Stichpunkte</li>
+                <li>Als Gedicht oder Geschichte</li>
+                <li>Mit praktischen Beispielen</li>
+            </ul>
+            
+            <p><strong>Gib der KI eine Rolle und eine Aufgabe. Beispiele:</strong></p>
+            
+            <div class="code-block">system_prompt = "Du bist Mathematiklehrer, erkläre für einen Grundschüler, wie Multiplikation funktioniert. Gib einen kurzen, motivierenden Erklärtext aus."</div>
+            
+            <div class="code-block">system_prompt = "Du bist ein freundlicher Übersetzer. Übersetze deutsche Texte ins Englische und erkläre schwierige Wörter."</div>
+        </div>
+
+        <div class="success">
+            <p><strong>Tipp:</strong> Je genauer du bist, desto besser wird die Antwort der KI. Experimentiere mit verschiedenen Rollen und Aufgaben!</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Weiter experimentieren:</strong> Hast du die Grundlagen verstanden? Dann probiere weitere Features aus – füge Eingabefelder hinzu, lass die KI verschiedene Ausgabeformate erstellen oder baue eine Bewertungsfunktion ein!</p>
+        </div>
+    </div>
+</body>
+</html>
