@@ -65,21 +65,11 @@ cd KI_App
 streamlit run ki_app.py
 ```
 
-#### Demo-App (vollständige Referenz)
+#### Zurücksetzen für den nächsten Workshop
+Projektordner "Python_lvl1" löschen und mit folgendem Befehl neu erstellen:
+
 ```bash
-poetry run streamlit run helper_app.py
-```
-
-### Alternative ohne Poetry
-```bash
-# Eis-App
-streamlit run Base_App/base_app.py
-
-# KI-App
-streamlit run KI_App/ki_app.py
-
-# Demo-App
-streamlit run helper_app.py
+git clone https://github.com/MariusSuessmilch/Python_lvl1.git
 ```
 
 ## Apps beenden
