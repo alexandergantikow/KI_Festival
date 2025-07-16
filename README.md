@@ -38,7 +38,7 @@ sudo apt-get install -f  # Falls Abhängigkeiten fehlen
 ### 1. Repository klonen
 
 ```bash
-git clone https://github.com/MariusSuessmilch/KI_Festival.git
+git clone git@github.com:alexandergantikow/KI_Festival.git
 cd KI_Festival
 ```
 
