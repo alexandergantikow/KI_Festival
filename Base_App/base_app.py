@@ -8,10 +8,10 @@ st.write("Meine app macht...")
 auswahl = st.text_input("Was möchtest du bewerten?")
     
 #TODO Slider für Bewertung
-bewertung = st.slider("Bewertung", 1, 5)
+bewertung = st.slider("Bewertung", min_value=1, max_value=5)
 
 # Aufgabe 3
 #TODO Button zum Absenden und Anzeigen der Bewertung
 if st.button("Absenden"):
-    st.write(f"Du hast {auswahl} mit {bewertung}/5 Punkten bewertet!")
+    st.write(f"Du hast {auswahl} mit {bewertung}/10 Punkten bewertet!")
     
