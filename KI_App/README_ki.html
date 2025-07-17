@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KI-App mit Streamlit – Dein Mini-Workshop</title>
+    <title>Programmiere eine KI-App</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -231,22 +231,23 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>KI-App mit Streamlit – Dein Mini-Workshop</h1>
-            <div class="subtitle">Entwickle deine eigene KI-Anwendung Schritt für Schritt</div>
+            <h1>Programmiere eine KI-App</h1>
+            <h1>Mini-Workshop</h1>
+            <div class="subtitle">Wir entwickeln eine KI-Anwendung Schritt für Schritt</div>
         </div>
 
         <div class="highlight">
-            <p>In diesem Mini-Workshop baust du Schritt für Schritt deine eigene kleine KI-Anwendung mit Streamlit. <strong>Du entscheidest selbst, was die KI für dich tun soll!</strong> Gehe die Aufgaben der Reihe nach durch und probiere alles direkt im Code aus.</p>
-            <p><strong>Hilfe benötigt?</strong> Du kannst dir unsere Beispiel-App ansehen und dort oben links auch eine KI Fragen stellen (kopiere gerne auch Code in den Chat!): <a href="https://kifestival.streamlit.app/" target="_blank">https://kifestival.streamlit.app/</a></p>
+            <p>In diesem Mini-Workshop baust du Schritt für Schritt deine eigene kleine KI-App. Gehe die Aufgaben der Reihe nach durch und probiere aus.</p>
+            <p><strong>Hilfe benötigt?</strong> Wenn du Hilfe brauchst, frage gerne die freundlichen Kollegen am Stand.</p>
         </div>
 
-        <h3>Einführung: Variablen in Python</h3>
+        <h3>Einführung: Variablen in der Programmiersprache Python</h3>
         
         <div class="intro-section">
-            <p>Variablen sind wie kleine Boxen, in denen du Informationen speichern kannst. Du gibst ihnen einen Namen und kannst ihnen Werte zuweisen, zum Beispiel Zahlen oder Texte. Variablen helfen dir dabei, Daten im Programm zu merken und später wiederzuverwenden. <strong>Ohne Variablen könntest du keine Benutzereingaben speichern oder Berechnungen durchführen!</strong></p>
+            <p>Variablen sind wie kleine Boxen, in denen du Informationen speichern kannst. Du gibst ihnen einen Namen (dieser steht vor dem =) und kannst ihnen Werte zuweisen (diese stehen nach dem =), zum Beispiel Zahlen oder Texte. Die Variablen merken sich alles, was du ihnen sagst und können das später wieder verwenden. </p>
         </div>
 
-        <h4>Beispiel:</h4>
+        <h5>Zum Beispiel:</h5>
         <div class="code-block">name = "Anna"
 punkte = 5</div>
 
@@ -257,13 +258,14 @@ punkte = 5</div>
         <div class="step-box">
             <div class="step-title">Überlege dir, welche Aufgabe die KI für dich erledigen soll.</div>
             
-            <p><strong>Beispiele:</strong></p>
+            <p><strong>Zum Beispiel:</strong></p>
             <ul>
-                <li>Lass dir Schulthemen erklären</li>
-                <li>Texte übersetzen</li>
-                <li>Aus Stichpunkten einen Text machen</li>
-                <li>Gedichte oder Geschichten schreiben</li>
-                <li>Mathe-Aufgaben erklären</li>
+                <li>Lass dir...</li>
+                <li>...Schulthemen erklären</li>
+                <li>...Texte übersetzen</li>
+                <li>...aus Stichpunkten einen Text machen</li>
+                <li>...Gedichte oder Geschichten schreiben</li>
+                <li>...eine Mathe-Aufgabe erklären</li>
             </ul>
             
             <p>Du kannst dir auch eine ganz eigene Anwendung ausdenken!</p>
@@ -274,7 +276,7 @@ punkte = 5</div>
         <h2>Aufgabe 2: Passe den Titel deiner App an</h2>
         
         <div class="step-box">
-            <div class="step-title">Passe den Titel der App so an, dass er zu deiner Anwendung passt.</div>
+            <div class="step-title">Passe jetzt den Titel der App so an, dass er zu deiner KI-Anwendung passt.</div>
             
             <p>Suche im Code die Zeile mit <code>st.title("Formulierungsmaschine")</code>.</p>
             
@@ -284,19 +286,19 @@ punkte = 5</div>
         </div>
 
         <div class="tip-box">
-            <p><strong>Hinweis:</strong> Der Titel erscheint oben in deiner Web-App.</p>
+            <p><strong>Hinweis:</strong> Nun erscheint der geändere Titel im Web-Browser.</p>
         </div>
 
         <hr class="divider">
 
-        <h2>Aufgabe 3: Erkläre der KI ihre Aufgabe</h2>
+        <h2>Aufgabe 3: Erkläre der KI, wie sie antworten soll</h2>
         
         <div class="step-box">
-            <div class="step-title">Im sogenannten <code>system_prompt</code> kannst du der KI genau erklären, was sie für dich tun soll.</div>
+            <div class="step-title">Im sogenannten<code>system_prompt</code>kannst du der KI genau erklären, wie sie die Antworten für dich formulieren soll.</div>
             
             <p>Suche im Code die Zeile mit <code>system_prompt = ...</code>.</p>
             
-            <p>Beschreibe, wie die KI antworten soll:</p>
+            <p>Beschreibe, wie die KI antworten soll, zum Beispiel:</p>
             <ul>
                 <li>Einfach verständlich</li>
                 <li>Für Grundschüler geeignet</li>
@@ -305,7 +307,7 @@ punkte = 5</div>
                 <li>Mit praktischen Beispielen</li>
             </ul>
             
-            <p><strong>Gib der KI eine Rolle und eine Aufgabe. Beispiele:</strong></p>
+            <p><strong>Gib der KI eine Rolle und eine Aufgabe, zum Beispiel:</strong></p>
             
             <div class="code-block">system_prompt = "Du bist Mathematiklehrer, erkläre für einen Grundschüler, wie Multiplikation funktioniert. Gib einen kurzen, motivierenden Erklärtext aus."</div>
             
@@ -316,9 +318,7 @@ punkte = 5</div>
             <p><strong>Tipp:</strong> Je genauer du bist, desto besser wird die Antwort der KI. Experimentiere mit verschiedenen Rollen und Aufgaben!</p>
         </div>
 
-        <div class="highlight">
-            <p><strong>Weiter experimentieren:</strong> Hast du die Grundlagen verstanden? Dann probiere weitere Features aus – füge Eingabefelder hinzu, lass die KI verschiedene Ausgabeformate erstellen oder baue eine Bewertungsfunktion ein!</p>
-        </div>
+
     </div>
 </body>
 </html>
