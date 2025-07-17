@@ -215,22 +215,23 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Eis-Bewertungs-App – Dein Mini-Workshop</h1>
-            <div class="subtitle">Schritt für Schritt zur eigenen Python-App mit Streamlit</div>
+            <h1>Eis-Bewertungs-App</h1>
+            <h1>Mini-Workshop</h1>
+            <div class="subtitle">Wir entwickeln eine KI-Anwendung Schritt für Schritt</div>
         </div>
 
         <div class="highlight">
-            <p>In diesem Mini-Workshop baust du eine eigene kleine App, mit der du verschiedene Eissorten bewerten kannst. Gehe die Aufgaben Schritt für Schritt durch und probiere alles direkt im Code aus!</p>
-            <p><strong>Hilfe benötigt?</strong> Du kannst dir unsere Beispiel-App ansehen und dort oben links auch eine KI Fragen stellen (kopiere gerne auch Code in den Chat!): <a href="https://kifestival.streamlit.app/" target="_blank">https://kifestival.streamlit.app/</a></p>
+            <p>In diesem Mini-Workshop baust du deine eigene kleine App, mit der du verschiedene Eissorten bewerten kannst. Gehe die Aufgaben Schritt für Schritt durch und probiere aus.</p>
+            <p><strong>Hilfe benötigt?</strong> Wenn du Hilfe brauchst, frage gerne die freundlichen Kollegen am Stand.</p>
         </div>
 
-        <h2>Einführung: Variablen in Python</h2>
+        <h3>Einführung: Variablen in der Programmiersprache Python</h3>
         
         <div class="intro-section">
-            <p>Variablen sind wie kleine Boxen, in denen du Informationen speichern kannst. Du gibst ihnen einen Namen und kannst ihnen Werte zuweisen, zum Beispiel Zahlen oder Texte. Variablen helfen dir dabei, Daten im Programm zu merken und später wiederzuverwenden. <strong>Ohne Variablen könntest du keine Benutzereingaben speichern oder Berechnungen durchführen!</strong></p>
+            <p>Variablen sind wie kleine Boxen, in denen du Informationen speichern kannst. Du gibst ihnen einen Namen (dieser steht vor dem =) und kannst ihnen Werte zuweisen (diese stehen nach dem =), zum Beispiel Zahlen oder Texte. Die Variablen merken sich alles, was du ihnen sagst und können das später wieder verwenden.</p>
         </div>
 
-        <h4>Beispiel:</h4>
+        <h5>Zum Beispiel:</h5>
         <div class="code-block">name = "Anna"
 punkte = 5</div>
 
@@ -243,15 +244,15 @@ punkte = 5</div>
             
             <div class="code-block">st.title("Eis-Bewertungs-App")</div>
             
-            <p>Schreibe darunter eine kurze Beschreibung mit <code>st.write()</code>, zum Beispiel:</p>
+            <p>Schreibe darunter eine kurze Beschreibung mit<code>st.write()</code>, zum Beispiel:</p>
             
             <div class="code-block">st.write("Trage deine Lieblings-Eissorte ein und bewerte sie auf einer Skala von 1 bis 10!")</div>
         </div>
 
-        <h2>Aufgabe 2: Eissorte & Bewertung</h2>
+        <h2>Aufgabe 2: Eissorte und Bewertung</h2>
         
         <div class="step-box">
-            <div class="step-title">Baue die Eingabeelemente für die Bewertung ein:</div>
+            <div class="step-title">Baue das Eingabefeld und den Slider für die Bewertung ein:</div>
             
             <p>Erstelle ein Textfeld, in das du eine Eissorte eintragen kannst:</p>
             
@@ -259,15 +260,15 @@ punkte = 5</div>
             
             <p>Füge einen Slider hinzu, mit dem du eine Bewertung von 1 bis 10 auswählen kannst:</p>
             
-            <div class="code-block">bewertung = st.slider("Wie lecker findest du diese Sorte?", min_value=1, max_value=10, value=5)</div>
+            <div class="code-block">bewertung = st.slider("Wie lecker findest du diese Sorte?", min_value=1, max_value=10)</div>
         </div>
 
         <h2>Aufgabe 3: Bewertung anzeigen</h2>
 
-        <h3>Einführung: f-strings in Python</h3>
+        <h3>Einführung: f-strings in der Programmiersprache Python</h3>
         
         <div class="intro-section">
-            <p>Mit sogenannten f-strings kannst du Variablen ganz einfach in Texte einbauen. Das macht Ausgaben übersichtlicher und deinen Code einfacher zu lesen. Du schreibst einfach ein <code>f</code> vor die Anführungszeichen und setzt Variablennamen in geschweifte Klammern:</p>
+            <p>Mit sogenannten f-strings kannst du Variablen ganz einfach in Texte einbauen. Das macht deinen Code einfacher zu lesen. Du schreibst einfach ein <code>f</code> vor die Anführungszeichen und setzt den Namen der Variable in geschweifte Klammern:</p>
         </div>
 
         <div class="code-block">name = "Anna"
@@ -279,7 +280,7 @@ print(f"{name} hat {punkte} Punkte!")</div>
         </div>
 
         <div class="step-box">
-            <div class="step-title">Füge einen Button hinzu. Wenn du darauf klickst, soll die Bewertung für die eingegebene Eissorte angezeigt werden.</div>
+            <div class="step-title">Füge jetzt noch einen Button hinzu, der - wenn man darauf klickt - die Bewertung der eingegebenen Eissorte anzeigt.</div>
             
             <h4>Beispiel:</h4>
             
@@ -288,7 +289,7 @@ print(f"{name} hat {punkte} Punkte!")</div>
         </div>
 
         <div class="highlight">
-            <p><strong>Geschafft!</strong> Du hast erfolgreich deine erste Eis-Bewertungs-App erstellt. Experimentiere gerne weiter und füge eigene Ideen hinzu – zum Beispiel eine Liste mit allen bisherigen Bewertungen oder verschiedene Kategorien wie Geschmack, Textur und Preis!</p>
+            <p><strong>Geschafft!</strong> Du hast erfolgreich deine erste Eis-Bewertungs-App programmiert.</p>
         </div>
     </div>
 </body>
